@@ -13,15 +13,14 @@ export class GitHubService {
 
     getData() {
         let headers = new Headers({
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json', 
             'Access-Control-Allow-Origin': "*"
-
         });
         // let headers = new Headers();
         // headers.append('Content-Type', 'application/json');
         // headers.append('Access-Control-Allow-Origin', "*"); 
 
-        return this.http.get(`http://adoptuj-pupila.herokuapp.com/pl/api/v1/shelters/`, { headers: headers });
+        return this.http.get(`shelters.json`, { headers: headers });
     }
 
     getDetails(repo) {
