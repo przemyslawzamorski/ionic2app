@@ -35,4 +35,15 @@ export class HomePage {
   goToAnimalsList() {
     this.nav.push(DetailsPage);
   }
+
+  addTest() {
+    this.manager.putt().subscribe(
+      data => {
+        console.log('dodałem', data);
+      },
+      err => console.log('error dodawania', err),
+      () => console.log('getRepos completed')
+    );
+  }
+
 }

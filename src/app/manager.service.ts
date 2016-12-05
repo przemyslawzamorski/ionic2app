@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Http, Headers} from '@angular/http';
+import {Http, Headers, RequestOptions} from '@angular/http';
 
 @Injectable()
 export class Manager {
@@ -53,5 +53,33 @@ export class Manager {
         return this.http.get(`${repo.url}/readme`, { headers: headers });
     }
 
+    putt() {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
 
+
+        var jsonBody = {
+            "age": 12,
+            "name": 'anal',
+            "shelter": 6,
+            "slug": 'anal-kuba-cwikowski'
+            // "description": 'pierdolony describe którego nie ma w wymaganych parametrach bicz'
+
+        };
+
+        var authheader = 'Basic ' + btoa('jacob:njjwpjkm');
+        console.log('x', authheader);
+        headers.delete('Authorization');
+
+        headers.append('Authorization', authheader);
+
+        let body = JSON.stringify(jsonBody);
+
+        let options = new RequestOptions({ headers: headers });
+
+        return this.http.put('https://adoptuj-pupila.herokuapp.com/pl/api/v1/animals/',
+            body,
+            options);
+    }
 }
+
+
