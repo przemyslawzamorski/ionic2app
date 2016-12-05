@@ -52,3 +52,12 @@ ion-app.md{
     margin-top:5px;
     margin-bottom: 5px;
 }
+
+.shelter-detail-name{
+    padding:0px;
+}
+
+.hr-dispel{
+    background-color:  #ededed;
+    width: 90%;
+}

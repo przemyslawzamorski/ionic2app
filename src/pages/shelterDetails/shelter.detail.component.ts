@@ -9,22 +9,22 @@ import {Manager} from '../../app/manager.service';
 })
 export class ShelterDetailPage {
 
-    public shelterBasicInfo: any[];
-
-    public shelterDetail: any[];
+    public shelterBasicInfo: any;
+    public shelterAnimals: any[];
     public erroMessage: string;
 
     constructor(private manager: Manager,
         private nav: NavController,
         private navParams: NavParams) {
 
-        this.manager.getShelterList().subscribe(
+        this.shelterBasicInfo = navParams.get('shelterBasicInfo');
+        this.manager.getAnimalsForShelter(this.shelterBasicInfo.id).subscribe(
             (shelters: any) => {
                 console.log('data', shelters.json());
-                this.shelterDetail = shelters.json();
+                this.shelterAnimals = shelters.json();
             },
             err => { this.erroMessage = err; console.error(err) },
-            () => console.log('getRepos completed')
+            () => console.log('getAnimals for shelter completed')
         );
     }
 }

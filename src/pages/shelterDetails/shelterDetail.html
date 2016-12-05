@@ -12,24 +12,38 @@
         <p class="main-header-text"><strong>{{shelterBasicInfo.name}}</strong></p>
     </div>
     <br>
-    <ion-col width-40>
-        <ion-thumbnail item-left>
-            <img src="https://www.petfinder.com/wp-content/uploads/2013/05/120251710-632x3531.jpg">
-        </ion-thumbnail>
-    </ion-col>
-    <ion-col width-60>
-        <ion-card-header>
-            <strong>{{ shelterBasicInfo.name }}</strong>
-        </ion-card-header>
-        <ion-card-content>
-            <p class='card-text-content'>
-                <ion-icon name="navigate"></ion-icon> {{ shelterBasicInfo.address }}</p>
-            <p class='card-text-content'>
-                <ion-icon name="phone-portrait"></ion-icon> {{shelterBasicInfo.phone}}</p>
-        </ion-card-content>
-    </ion-col>
+    <ion-grid>
+        <ion-row>
+            <ion-col width-40>
+                <ion-thumbnail item-left>
+                    <img src="https://www.petfinder.com/wp-content/uploads/2013/05/120251710-632x3531.jpg">
+                </ion-thumbnail>
+            </ion-col>
+            <ion-col width-60>
+                <ion-card-header class='shelter-detail-name'>
+                    <strong>{{ shelterBasicInfo.name }}</strong>
+                </ion-card-header>
+                <ion-card-content>
+                    <p class='card-text-content'>
+                        <ion-icon name="navigate"></ion-icon> {{ shelterBasicInfo.address }}</p>
+                    <p class='card-text-content'>
+                        <ion-icon name="phone-portrait"></ion-icon> {{shelterBasicInfo.phone}}</p>
+                </ion-card-content>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <hr class="hr-dispel"> {{shelterBasicInfo.description }}
+    <hr class="hr-dispel">
 
-    <!--<ion-card *ngFor="let shelter of shelterList">
+    <br>
+
+    <div padding>
+        <p class="main-header-text"><strong>Zwierzęta znajdujące się w schronisku</strong></p>
+    </div>
+
+
+
+    <ion-card *ngFor="let animal of shelterAnimals">
         <ion-grid>
             <ion-row>
                 <ion-col width-40>
@@ -39,16 +53,18 @@
                 </ion-col>
                 <ion-col width-60>
                     <ion-card-header>
-                        <strong>{{ shelter.name }}</strong>
+                        <strong>{{ animal.name }}</strong>
+                        <ion-icon *ngIf="animal.gender === 'F'" name="female"></ion-icon>
+                        <ion-icon *ngIf="animal.gender === 'M'" name="male"></ion-icon>
                     </ion-card-header>
                     <ion-card-content>
                         <p class='card-text-content'>
-                            <ion-icon name="navigate"></ion-icon> {{ shelter.address }}</p>
+                            <ion-icon name="calendar">Wiek </ion-icon> {{ animal.age }}</p>
                         <p class='card-text-content'>
-                            <ion-icon name="phone-portrait"></ion-icon> {{shelter.phone}}</p>
+                            <ion-icon name="paw">Typ </ion-icon> {{animal.type}}</p>
                     </ion-card-content>
                 </ion-col>
             </ion-row>
         </ion-grid>
-    </ion-card>-->
+    </ion-card>
 </ion-content>
