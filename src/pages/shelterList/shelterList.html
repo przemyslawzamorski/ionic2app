@@ -1,2 +1,32 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Adoptuj pupila
+            <ion-icon name="paw"></ion-icon>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
 
-LOL
+<ion-content>
+    <div padding>
+        <p class="main-header-text"><strong>Lista Trójmiejskich schronisk</strong></p>
+    </div>
+    <br>
+    <ion-card *ngFor="let shelter of shelterList">
+        <ion-grid>
+            <ion-row>
+                <ion-col width-40>
+                    Obrazek
+                </ion-col>
+                <ion-col width-60>
+                    <ion-card-header>
+                        {{ shelter.name }}
+                    </ion-card-header>
+                    <ion-card-content>
+                        {{ shelter.address }}
+                    </ion-card-content>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+</ion-content>

@@ -28,8 +28,6 @@ export class HomePage {
     // );
   }
 
-  
-
   goToSheltersList() {
     this.nav.push(ShelterListPage);
   }

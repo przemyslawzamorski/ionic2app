@@ -1,5 +1,20 @@
+ion-app.md{
+    font-family: "Segoe UI", "Noto Sans", sans-serif;
+    font-size: 1.4rem;
+}
+
+
 .toolbar-background{
     background-color: #BDA0CB !important;
+}
+
+.toolbar-title{
+    text-align:left;
+    padding: 0 6px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000;
 }
 
 .toolbar-content{
