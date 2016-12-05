@@ -2,7 +2,6 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { DetailsPage } from '../pages/details/details.component';
 import { ShelterListPage } from '../pages/shelterList/shelter.list.component';
 import {ShelterDetailPage} from  '../pages/shelterDetails/shelter.detail.component';
 
@@ -11,7 +10,6 @@ import {ShelterDetailPage} from  '../pages/shelterDetails/shelter.detail.compone
   declarations: [
     MyApp,
     HomePage,
-    DetailsPage,
     ShelterListPage,
     ShelterDetailPage
   ],
@@ -22,7 +20,6 @@ import {ShelterDetailPage} from  '../pages/shelterDetails/shelter.detail.compone
   entryComponents: [
     MyApp,
     HomePage,
-    DetailsPage,
     ShelterListPage,
     ShelterDetailPage
   ],

@@ -28,11 +28,6 @@ export class ShelterListPage {
     }
 
     goToSheltersDetail(shelter) {
-        console.log('shelter clicked', shelter);
         this.nav.push(ShelterDetailPage, { shelterBasicInfo: shelter });
     }
-
-    
-
-    
 }

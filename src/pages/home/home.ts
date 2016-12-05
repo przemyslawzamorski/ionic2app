@@ -14,18 +14,7 @@ export class HomePage {
   public log: boolean = false;
   public tekst: string;
 
-
   constructor(private manager: Manager, private nav: NavController) {
-  }
-
-  getRepos() {
-    // this.manager.getRepos(this.username).subscribe(
-    //   data => {
-    //     this.foundRepos = data.json();
-    //   },
-    //   err => console.error(err),
-    //   () => console.log('getRepos completed')
-    // );
   }
 
   goToSheltersList() {
