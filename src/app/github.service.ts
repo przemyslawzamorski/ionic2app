@@ -20,7 +20,7 @@ export class GitHubService {
         // headers.append('Content-Type', 'application/json');
         // headers.append('Access-Control-Allow-Origin', "*"); 
 
-        return this.http.get(`shelters.json`, { headers: headers });
+        return this.http.get(`/assets/shelters.json`, { headers: headers });
     }
 
     getDetails(repo) {

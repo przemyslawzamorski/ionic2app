@@ -30,7 +30,7 @@ export class HomePage {
   getdata() {
     this.github.getData().subscribe(
       (data: any) => {
-        console.log('data', data);
+        console.log('data', data.json());
         this.log = true;
         this.tekst = data;
       },
