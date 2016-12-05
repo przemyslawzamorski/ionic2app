@@ -13,17 +13,18 @@ export class Manager {
         //     'Content-Type': 'application/json',
         //     'Access-Control-Allow-Origin': "*"
         // });
-        let headers = new Headers();
-        headers.append('Content-Type', 'application/json');
-        headers.append('Access-Control-Allow-Origin', "*");
+        // let headers = new Headers();
+        // headers.append("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, access-control-allow-origin, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, Access-control-allow-origin");
 
-        headers.append("Access-Control-Allow-Origin", "*");
-        headers.append("Access-Control-Allow-Credentials", "true");
-        headers.append("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-        headers.append("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
-        console.log('header', headers);
-        // return this.http.get(this.serverAdress + 'shelters/?format=json', { headers: headers });
-        return this.http.get(`/assets/shelters.json`, { headers: headers });
+        // // headers.append('Content-Type', 'application/json');
+        // headers.append('Access-Control-Allow-Origin', "*");
+        // // headers.append('Origin', "https://adoptuj-pupila.herokuapp.com/pl/api/v1/shelters/?format=json");
+
+        // headers.append("Access-Control-Allow-Credentials", "true");
+        // headers.append("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+        // console.log('header', headers);
+        return this.http.get(this.serverAdress + 'shelters/?format=json');
+        // return this.http.get(`/assets/shelters.json`, { headers: headers });
     }
 
     getAnimalsForShelter(shelterId: number) {
