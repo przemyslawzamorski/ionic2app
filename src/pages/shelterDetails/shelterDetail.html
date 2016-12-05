@@ -9,10 +9,27 @@
 
 <ion-content>
     <div padding>
-        <p class="main-header-text"><strong>Lista Trójmiejskich schronisk</strong></p>
+        <p class="main-header-text"><strong>{{shelterBasicInfo.name}}</strong></p>
     </div>
     <br>
-    <ion-card *ngFor="let shelter of shelterList" (click)="goToSheltersDetail(shelter)">
+    <ion-col width-40>
+        <ion-thumbnail item-left>
+            <img src="https://www.petfinder.com/wp-content/uploads/2013/05/120251710-632x3531.jpg">
+        </ion-thumbnail>
+    </ion-col>
+    <ion-col width-60>
+        <ion-card-header>
+            <strong>{{ shelterBasicInfo.name }}</strong>
+        </ion-card-header>
+        <ion-card-content>
+            <p class='card-text-content'>
+                <ion-icon name="navigate"></ion-icon> {{ shelterBasicInfo.address }}</p>
+            <p class='card-text-content'>
+                <ion-icon name="phone-portrait"></ion-icon> {{shelterBasicInfo.phone}}</p>
+        </ion-card-content>
+    </ion-col>
+
+    <!--<ion-card *ngFor="let shelter of shelterList">
         <ion-grid>
             <ion-row>
                 <ion-col width-40>
@@ -33,5 +50,5 @@
                 </ion-col>
             </ion-row>
         </ion-grid>
-    </ion-card>
+    </ion-card>-->
 </ion-content>

@@ -4,6 +4,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { DetailsPage } from '../pages/details/details.component';
 import { ShelterListPage } from '../pages/shelterList/shelter.list.component';
+import {ShelterDetailPage} from  '../pages/shelterDetails/shelter.detail.component';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ShelterListPage } from '../pages/shelterList/shelter.list.component';
     MyApp,
     HomePage,
     DetailsPage,
-    ShelterListPage
+    ShelterListPage,
+    ShelterDetailPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -21,7 +23,8 @@ import { ShelterListPage } from '../pages/shelterList/shelter.list.component';
     MyApp,
     HomePage,
     DetailsPage,
-    ShelterListPage
+    ShelterListPage,
+    ShelterDetailPage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }]
 })

@@ -15,11 +15,10 @@ export class Manager {
         // });
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        headers.append('Access-Control-Allow-Origin', "*"); 
-
-        // return this.http.get(this.serverAdress + 'shelters/', { headers: headers });
-
-        return this.http.get(`/assets/shelters.json`, { headers: headers });
+        headers.append('Access-Control-Allow-Origin', "*");
+        console.log('header', headers);
+        return this.http.get(this.serverAdress + 'shelters/', { headers: headers });
+        // return this.http.get(`/assets/shelters.json`, { headers: headers });
     }
 
     getDetails(repo) {
