@@ -39,7 +39,11 @@ export class HomePage {
     );
   }
 
-  goToDetails(repo) {
-    this.nav.push(DetailsPage, { repo: repo });
+  goToSheltersList() {
+    this.nav.push(DetailsPage);
+  }
+
+  goToAnimalsList() {
+    this.nav.push(DetailsPage);
   }
 }
