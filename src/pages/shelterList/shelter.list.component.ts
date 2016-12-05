@@ -11,6 +11,7 @@ import {ShelterDetailPage} from '../shelterDetails/shelter.detail.component';
 export class ShelterListPage {
 
     public shelterList: any[];
+    public serverShort: string = "https://adoptuj-pupila.herokuapp.com"
     public erroMessage: string;
 
     constructor(private manager: Manager,

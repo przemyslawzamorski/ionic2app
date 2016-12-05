@@ -13,22 +13,7 @@ export class Manager {
     }
 
     getAnimalsForShelter(shelterId: number) {
-        // let headers = new Headers({
-        //     'Content-Type': 'application/json',
-        //     'Access-Control-Allow-Origin': "*"
-        // // });
-        // let headers = new Headers();
-        // headers.append('Content-Type', 'application/json');
-        // headers.append('Access-Control-Allow-Origin', "*");
-
-        // headers.append("Access-Control-Allow-Origin", "*");
-        // headers.append("Access-Control-Allow-Credentials", "true");
-        // headers.append("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-        // headers.append("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
-        // console.log('header', headers);
-        return this.http.get(this.serverAdress +shelterId+ '/animals/?format=json');
-        // return this.http.get(`/assets/animalsForShelter.json`, { headers: headers });
-
+        return this.http.get(this.serverAdress + 'shelters/' + shelterId + '/animals/?format=json');
     }
 
     putt() {
