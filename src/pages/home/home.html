@@ -1,13 +1,28 @@
 <ion-header>
     <ion-navbar>
         <ion-title>
-            GitHub
+            Adoptuj pupila
+            <ion-icon name="paw"></ion-icon>
         </ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content class="home">
-    <ion-list inset>
+    <div padding>
+        <p class="main-header-text">Aplikacja stworzona aby pomóc w znalezieniu zwierzętom nowego domu.</p>
+
+    </div>
+
+    <button ion-button round>
+        Sprawdź listę schronisk<br> w Trójmieście<ion-icon name="home"></ion-icon>
+    </button>
+
+    <button ion-button round>
+        Sprawdź listę zwierząt<br> szukających nowego domu <ion-icon name="paw"></ion-icon>
+    </button>
+
+
+    <!--<ion-list inset>
         <ion-item>
             <ion-label>Username</ion-label>
             <ion-input [(ngModel)]="username" type="text"></ion-input>
@@ -15,8 +30,8 @@
     </ion-list>
     <div padding>
         <button block (click)="getdata()">Search</button>
-    </div>
-    <div padding>
+    </div>-->
+    <!--<div padding>
         <p>status</p>
         <p>{{tekst}}</p>
     </div>
@@ -27,5 +42,5 @@
         <ion-card-content>
             {{ repo.description }}
         </ion-card-content>
-    </ion-card>
+    </ion-card>-->
 </ion-content>
