@@ -11,7 +11,7 @@ export class Manager {
     //     return repos;
     // }
 
-    getData() {
+    getShelterList() {
         let headers = new Headers({
             'Content-Type': 'application/json', 
             'Access-Control-Allow-Origin': "*"

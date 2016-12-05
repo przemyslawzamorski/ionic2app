@@ -1,6 +1,7 @@
 import {Component} from "@angular/core";
 import {Manager} from '../../app/manager.service';
 import {NavController} from 'ionic-angular';
+import {ShelterListPage} from '../shelterList/shelter.list.component';
 import {DetailsPage} from '../details/details.component';
 
 @Component({
@@ -27,20 +28,10 @@ export class HomePage {
     // );
   }
 
-  getSheltersList() {
-    this.manager.getData().subscribe(
-      (data: any) => {
-        console.log('data', data.json());
-        this.log = true;
-        this.tekst = data;
-      },
-      err => { this.tekst = err; console.error(err) },
-      () => console.log('getRepos completed')
-    );
-  }
+  
 
   goToSheltersList() {
-    this.nav.push(DetailsPage);
+    this.nav.push(ShelterListPage);
   }
 
   goToAnimalsList() {
