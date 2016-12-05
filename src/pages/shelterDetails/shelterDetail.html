@@ -53,15 +53,15 @@
                 </ion-col>
                 <ion-col width-60>
                     <ion-card-header>
-                        <strong>{{ animal.name }}</strong>
+                        <strong>{{ animal.name }} </strong>
                         <ion-icon *ngIf="animal.gender === 'F'" name="female"></ion-icon>
                         <ion-icon *ngIf="animal.gender === 'M'" name="male"></ion-icon>
                     </ion-card-header>
                     <ion-card-content>
                         <p class='card-text-content'>
-                            <ion-icon name="calendar">Wiek </ion-icon> {{ animal.age }}</p>
+                            <ion-icon name="calendar"> Wiek </ion-icon> {{ animal.age }}</p>
                         <p class='card-text-content'>
-                            <ion-icon name="paw">Typ </ion-icon> {{animal.type}}</p>
+                            <ion-icon name="paw"> Typ </ion-icon> {{animal.type}}</p>
                     </ion-card-content>
                 </ion-col>
             </ion-row>

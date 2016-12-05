@@ -1,0 +1,13 @@
+[
+    {
+        "id": 4,
+        "name": "Kuba goralewski",
+        "age": 3,
+        "photo": "/media/13240575_1124114477632453_5948263133128620038_n_HbNYgId.jpg",
+        "description": "<p>Zwierzun :)</p>\r\n",
+        "type": "DOG",
+        "gender": "F",
+        "shelter": 6,
+        "slug": "kuba-goralewski"
+    }
+]
