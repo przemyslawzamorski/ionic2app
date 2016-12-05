@@ -1,10 +1,12 @@
-<ion-navbar *navbar>  
-    <ion-title>
-        GitHub
-    </ion-title>
-</ion-navbar>
+<ion-header >
+    <ion-navbar>
+        <ion-title>
+            GitHub
+        </ion-title>
+    </ion-navbar>
+</ion-header>
 
-<ion-content class="home">  
+<ion-content class="home">
     <ion-list inset>
         <ion-item>
             <ion-label>Username</ion-label>
@@ -14,7 +16,7 @@
     <div padding>
         <button block (click)="getRepos()">Search</button>
     </div>
-    <ion-card *ngFor="let repo of foundRepos">
+    <ion-card *ngFor="let repo of foundRepos" (click)="goToDetails(repo)">
         <ion-card-header>
             {{ repo.name }}
         </ion-card-header>
@@ -22,4 +24,4 @@
             {{ repo.description }}
         </ion-card-content>
     </ion-card>
-</ion-content>  
+</ion-content>
