@@ -1,4 +1,4 @@
-<ion-header >
+<ion-header>
     <ion-navbar>
         <ion-title>
             GitHub
@@ -14,7 +14,11 @@
         </ion-item>
     </ion-list>
     <div padding>
-        <button block (click)="getRepos()">Search</button>
+        <button block (click)="getdata()">Search</button>
+    </div>
+    <div padding>
+        <p>status</p>
+        <p>{{tekst}}</p>
     </div>
     <ion-card *ngFor="let repo of foundRepos" (click)="goToDetails(repo)">
         <ion-card-header>

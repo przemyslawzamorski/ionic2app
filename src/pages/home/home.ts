@@ -10,6 +10,9 @@ import {DetailsPage} from '../details/details.component';
 export class HomePage {
   public foundRepos;
   public username;
+  public log: boolean = false;
+  public tekst: string;
+
 
   constructor(private github: GitHubService, private nav: NavController) {
   }
@@ -20,6 +23,18 @@ export class HomePage {
         this.foundRepos = data.json();
       },
       err => console.error(err),
+      () => console.log('getRepos completed')
+    );
+  }
+
+  getdata() {
+    this.github.getData().subscribe(
+      (data: any) => {
+        console.log('data', data);
+        this.log = true;
+        this.tekst = data;
+      },
+      err => { this.tekst = err; console.error(err) },
       () => console.log('getRepos completed')
     );
   }
