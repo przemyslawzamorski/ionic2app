@@ -61,3 +61,8 @@ ion-app.md{
     background-color:  #ededed;
     width: 90%;
 }
+
+.description-text{
+    padding-left: 5%;
+    padding-right: 5%;
+}
