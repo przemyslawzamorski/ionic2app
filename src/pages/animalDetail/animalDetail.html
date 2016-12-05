@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Adoptuj pupila
+            <ion-icon name="paw"></ion-icon>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div padding>
+        <p class="main-header-text"><strong>{{animal.name}}</strong>
+            <ion-icon *ngIf="animal.gender === 'F'" name="female"></ion-icon>
+            <ion-icon *ngIf="animal.gender === 'M'" name="male"></ion-icon>
+        </p>
+    </div>
+    <br>
+    <ion-grid>
+        <ion-row>
+            <ion-col width-40>
+                <ion-thumbnail item-left>
+                    <img src="https://www.petfinder.com/wp-content/uploads/2013/05/120251710-632x3531.jpg">
+                </ion-thumbnail>
+            </ion-col>
+            <ion-col width-60>
+                <ion-card-content>
+                    <p class='card-text-content'>
+                        <ion-icon name="calendar"> Wiek </ion-icon> {{ animal.age }}</p>
+                    <p class='card-text-content'>
+                        <ion-icon name="paw"> Typ </ion-icon> {{animal.type}}</p>
+                </ion-card-content>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <hr class="hr-dispel"> {{animal.description }}
+    <hr class="hr-dispel">
+
+    <br>
+
+
+</ion-content>
