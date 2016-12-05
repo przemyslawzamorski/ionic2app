@@ -2,6 +2,7 @@ import {Component} from "@angular/core";
 import {Manager} from '../../app/manager.service';
 import {NavController} from 'ionic-angular';
 import {ShelterListPage} from '../shelterList/shelter.list.component';
+import {AnimalListPage} from '../animalList/animal.list.component';
 
 @Component({
   templateUrl: 'home.html',
@@ -21,7 +22,7 @@ export class HomePage {
   }
 
   goToAnimalsList() {
-    // this.nav.push(DetailsPage);
+    this.nav.push(AnimalListPage);
   }
 
   addTest() {

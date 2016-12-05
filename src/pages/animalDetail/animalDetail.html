@@ -19,7 +19,7 @@
         <ion-row>
             <ion-col width-40>
                 <ion-thumbnail item-left>
-                    <img src="https://www.petfinder.com/wp-content/uploads/2013/05/120251710-632x3531.jpg">
+                    <img src="{{serverShort}}{{animal.photo}}">
                 </ion-thumbnail>
             </ion-col>
             <ion-col width-60>
@@ -32,10 +32,8 @@
             </ion-col>
         </ion-row>
     </ion-grid>
-    <hr class="hr-dispel"> {{animal.description }}
     <hr class="hr-dispel">
-
+    <div class="description-text" [innerHTML]="animal.description"></div>
+    <hr class="hr-dispel">
     <br>
-
-
 </ion-content>

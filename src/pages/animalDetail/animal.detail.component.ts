@@ -11,6 +11,8 @@ export class AnimalDetailPage {
 
     public animal: any;
     public erroMessage: string;
+    public serverShort: string = "https://adoptuj-pupila.herokuapp.com"
+
 
     constructor(private manager: Manager,
         private nav: NavController,

@@ -7,44 +7,23 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngIf="!manager.isLogged">
     <div padding>
-        <p class="main-header-text"><strong>{{shelterBasicInfo.name}}</strong></p>
+        <p class="main-header-text"><strong>Lista zwierząt z Trójmiejskich schronisk</strong></p>
     </div>
     <br>
-    <ion-grid>
-        <ion-row>
-            <ion-col width-40>
-                <ion-thumbnail item-left>
-                    <img src="{{serverShort}}{{shelterBasicInfo.photo}}">
-                </ion-thumbnail>
-            </ion-col>
-            <ion-col width-60>
-                <ion-card-header class='shelter-detail-name'>
-                    <strong>{{ shelterBasicInfo.name }}</strong>
-                </ion-card-header>
-                <ion-card-content>
-                    <p class='card-text-content'>
-                        <ion-icon name="navigate"></ion-icon> {{ shelterBasicInfo.address }}</p>
-                    <p class='card-text-content'>
-                        <ion-icon name="phone-portrait"></ion-icon> {{shelterBasicInfo.phone}}</p>
-                </ion-card-content>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
     <hr class="hr-dispel">
-    <div class="description-text" [innerHTML]="shelterBasicInfo.description"></div>
+        <p class="description-text"> Aby zobaczyć pełną listę zwierząt zaloguj się.</p>
     <hr class="hr-dispel">
 
-    <br>
+</ion-content>
 
+<ion-content *ngIf="manager.isLogged">
     <div padding>
-        <p class="main-header-text"><strong>Zwierzęta znajdujące się w schronisku</strong></p>
+        <p class="main-header-text"><strong>Lista zwierząt z Trójmiejskich schronisk</strong></p>
     </div>
-
-
-
-    <ion-card *ngFor="let animal of shelterAnimals" (click)="goToAnimalDetail(animal)">
+    <br>
+    <ion-card *ngFor="let animal of animalList" (click)="goToAnimalDetail(animal)">
         <ion-grid>
             <ion-row>
                 <ion-col width-40>

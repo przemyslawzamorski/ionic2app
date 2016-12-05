@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {Manager} from '../../app/manager.service';
+import {AnimalDetailPage} from '../animalDetail/animal.detail.component';
 
 
 @Component({
@@ -13,7 +14,6 @@ export class ShelterDetailPage {
     public shelterAnimals: any[];
     public erroMessage: string;
     public serverShort: string = "https://adoptuj-pupila.herokuapp.com"
-
 
     constructor(private manager: Manager,
         private nav: NavController,
@@ -28,5 +28,9 @@ export class ShelterDetailPage {
             err => { this.erroMessage = err; console.error(err) },
             () => console.log('getAnimals for shelter completed')
         );
+    }
+
+    goToAnimalDetail(animal) {
+        this.nav.push(AnimalDetailPage, { animal: animal });
     }
 }

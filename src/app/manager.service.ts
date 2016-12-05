@@ -6,10 +6,15 @@ export class Manager {
     constructor(private http: Http) {
     }
 
-    public serverAdress: string = 'https://adoptuj-pupila.herokuapp.com/pl/api/v1/'
+    public serverAdress: string = 'https://adoptuj-pupila.herokuapp.com/pl/api/v1/';
+    public isLogged: boolean = false;
 
     getShelterList() {
         return this.http.get(this.serverAdress + 'shelters/?format=json');
+    }
+
+    getAnimalsList() {
+        return this.http.get(this.serverAdress + 'animals/?format=json');
     }
 
     getAnimalsForShelter(shelterId: number) {
