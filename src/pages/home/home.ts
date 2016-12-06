@@ -76,14 +76,13 @@ export class HomePage implements DoCheck {
   Logout() {
     this.manager.currentUser = undefined;
     this.manager.resetDragableProduct();
+    this.user = undefined;
+    this.staff = false;
+    this.logged = false;
 
-    this.nav.push(HomePage);
   }
 
   goToQuestions() {
     this.nav.push(QuestionPage);
   }
-
-
-
 }
