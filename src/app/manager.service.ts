@@ -90,8 +90,8 @@ export class Manager {
 
         var jsonBody = {
             "question": question,
-            "USER": user.id,
-            "ANIMAL": animal
+            "user": user.id,
+            "animal": animal
         };
         console.log('jsonBody', jsonBody);
 
