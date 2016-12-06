@@ -5,6 +5,8 @@ import {ShelterListPage} from '../shelterList/shelter.list.component';
 import {AnimalListPage} from '../animalList/animal.list.component';
 import {LoginPage} from '../login/login.component';
 import {AddAnimalPage} from '../addAnimal/add.animal.component';
+import {QuestionPage} from '../questionList/question.list.component';
+
 
 @Component({
   templateUrl: 'home.html',
@@ -15,6 +17,7 @@ export class HomePage implements DoCheck {
   public tekst: string;
   public logged: boolean = false;
   public checkAuths: boolean = true;
+  public staff: boolean = false;
 
   constructor(public manager: Manager, private nav: NavController, public navParams: NavParams) {
     this.manager.getDraggedProduct().then((droppedProduct: any) => {
@@ -23,7 +26,8 @@ export class HomePage implements DoCheck {
       console.log('sets user', this.user);
       if (this.user) {
         this.logged = this.user.logged;
-        console.log('set', this.logged);
+        this.staff = this.user.isStaff;
+        console.log('set', this.staff);
       }
     });
 
@@ -43,7 +47,9 @@ export class HomePage implements DoCheck {
         console.log('sets user', this.user);
         if (this.user) {
           this.logged = this.user.logged;
-          console.log('set', this.logged);
+          this.staff = this.user.isStaff;
+
+          console.log('set', this.staff);
         }
       });
       this.checkAuths = false;
@@ -72,6 +78,10 @@ export class HomePage implements DoCheck {
     this.manager.resetDragableProduct();
 
     this.nav.push(HomePage);
+  }
+
+  goToQuestions() {
+    this.nav.push(QuestionPage);
   }
 
 

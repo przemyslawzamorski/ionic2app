@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Adoptuj pupila
+            <ion-icon name="paw"></ion-icon>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div padding>
+        <p class="main-header-text"><strong>Zapytania</strong></p>
+    </div>
+    <br>
+    <ion-card *ngFor="let quest of questionList" >
+        <p class='card-text-content'>
+            <ion-icon name="paw"> Dotyczy: </ion-icon> {{quest.animal}}</p>
+        <p class='card-text-content'>
+            <ion-icon name="person"> Od: </ion-icon> {{quest.user}}</p>
+        <p class='card-text-content'>
+            <ion-icon name="paw"> Tresc: </ion-icon> {{quest.question}}</p>
+    </ion-card>
+</ion-content>

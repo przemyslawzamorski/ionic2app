@@ -14,7 +14,10 @@ export class AddAnimalPage {
     public shelterBasicInfo: any;
     public shelterAnimals: any[];
     public erroMessage: string;
-    public serverShort: string = "https://adoptuj-pupila.herokuapp.com"
+    public serverShort: string = "https://adoptuj-pupila.herokuapp.com";
+    public pass: boolean = false;
+    public fail: boolean = false;
+
 
     constructor(public manager: Manager,
         private nav: NavController,
@@ -38,6 +41,8 @@ export class AddAnimalPage {
 
     addPet(name: any, age: any, type: any, gender: any, shelter: any, description: any) {
         console.log(name, age, type._values[0], gender, shelter, description)
+        this.pass = false;
+        this.fail = false;
 
         if (!shelter || !age || !name) {
             this.error = true;
@@ -46,8 +51,9 @@ export class AddAnimalPage {
             this.manager.dodajPupila(this.user, name, age, shelter._values[0], type._values[0], description, gender._values[0]).subscribe(
                 data => {
                     console.log('dodałem', data);
+                    this.pass = true;
                 },
-                err => console.log('error dodawania', err),
+                err => { this.fail = true; console.log('error dodawania', err) },
                 () => console.log('getRepos completed')
             );
 

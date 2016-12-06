@@ -99,6 +99,14 @@ export class Manager {
         let options = new RequestOptions({ headers: headers });
         return this.http.put('https://adoptuj-pupila.herokuapp.com/pl/api/v1/questions/', body, options);
     }
+
+    public getQuestions(login: string, pass: string, logged: boolean, id: number, isStuff: boolean) {
+        this.currentUser = new User(login, pass, logged, id, isStuff);
+        var Myheaders: Headers;
+        Myheaders = new Headers();
+        this.currentUser.setHttpHeader(Myheaders);
+        return this.http.get(this.serverAdress + 'questions/?format=json', { headers: Myheaders });
+    }
 }
 
 

@@ -67,6 +67,17 @@
     </ion-list>
     <hr class="hr-dispel">
 
+    <div *ngIf="pass" class='div-button' style="background-color:green">
+        Wysłano
+    </div>
+
+    <div *ngIf="fail" class='div-button' style="background-color:red">
+        Nie można wysłać spróbuj ponownie później
+    </div>
+
+    <div *ngIf='error' style="background-color:red;" class='div-button'>
+        Nie wprowadzono wszystkich wymaganych danych
+    </div>
 
     <br>
     <div class='div-button' (click)="addPet(name.value,age.value,type,gender,shelter,description.value)">
@@ -74,8 +85,5 @@
         <ion-icon name="paw" class="home-home-icon"></ion-icon>
     </div>
 
-    <div *ngIf='error' style="background-color:red;" class='div-button'>
-        Nie wprowadzono wszystkich wymaganych danych
-    </div>
 
 </ion-content>
