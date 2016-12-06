@@ -27,13 +27,13 @@
         <ion-icon name="paw" class="home-home-icon"></ion-icon>
     </div>
 
-    <div *ngIf="manager.isLogged" class='div-button' (click)="goToLoginPage()">
+    <div *ngIf="!manager.isLogged" class='div-button' (click)="goToLoginPage()">
         Zaloguj Się
         <ion-icon name="paw" class="home-home-icon"></ion-icon>
     </div>
 
-    <div *ngIf="!manager.isLogged" class='div-button' (click)="Logout()">
-        Zaloguj Się
+    <div *ngIf="manager.isLogged" class='div-button' (click)="Logout()">
+        Wyloguj Się
         <ion-icon name="paw" class="home-home-icon"></ion-icon>
     </div>
 </ion-content>

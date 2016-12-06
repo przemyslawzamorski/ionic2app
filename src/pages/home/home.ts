@@ -3,6 +3,7 @@ import {Manager} from '../../app/manager.service';
 import {NavController} from 'ionic-angular';
 import {ShelterListPage} from '../shelterList/shelter.list.component';
 import {AnimalListPage} from '../animalList/animal.list.component';
+import {LoginPage} from '../login/login.component';
 
 @Component({
   templateUrl: 'home.html',
@@ -26,11 +27,12 @@ export class HomePage {
   }
 
   goToLoginPage() {
-
+    this.nav.push(LoginPage);
   }
 
   Logout() {
-
+    this.manager.currentUser = undefined;
+    this.nav.push(HomePage);
   }
 
   addTest() {

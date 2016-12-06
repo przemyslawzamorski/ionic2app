@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Http, Headers, RequestOptions} from '@angular/http';
+import {User} from './user.class'
 
 @Injectable()
 export class Manager {
@@ -8,6 +9,7 @@ export class Manager {
 
     public serverAdress: string = 'https://adoptuj-pupila.herokuapp.com/pl/api/v1/';
     public isLogged: boolean = false;
+    public currentUser: User;
 
     getShelterList() {
         return this.http.get(this.serverAdress + 'shelters/?format=json');
@@ -19,6 +21,14 @@ export class Manager {
 
     getAnimalsForShelter(shelterId: number) {
         return this.http.get(this.serverAdress + 'shelters/' + shelterId + '/animals/?format=json');
+    }
+
+    public setUser(login: string, pass: string) {
+        this.currentUser = new User(login, pass);
+        var Myheaders: Headers;
+        Myheaders = new Headers();
+        this.currentUser.setHttpHeader(Myheaders);
+        return this.http.get(this.serverAdress + 'auth/test', { headers: Myheaders });
     }
 
     putt() {
