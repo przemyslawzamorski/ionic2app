@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Http, Headers, RequestOptions} from '@angular/http';
-import {User} from './user.class'
+import {User} from './user.class';
+import {authentifi} from './authentifics.cons';
+
 
 @Injectable()
 export class Manager {
@@ -24,7 +26,7 @@ export class Manager {
     }
 
     public setUser(login: string, pass: string) {
-        this.currentUser = new User(login, pass);
+        this.currentUser = new User(login, pass, false);
         var Myheaders: Headers;
         Myheaders = new Headers();
         this.currentUser.setHttpHeader(Myheaders);
@@ -51,6 +53,19 @@ export class Manager {
         let body = JSON.stringify(jsonBody);
         let options = new RequestOptions({ headers: headers });
         return this.http.put('https://adoptuj-pupila.herokuapp.com/pl/api/v1/animals/', body, options);
+    }
+
+    getDraggedProduct() {
+        return Promise.resolve(authentifi);
+    }
+
+    insertDraggedProduct(product: any) {
+        return Promise.resolve(authentifi).then((draggedProduct: any[]) => draggedProduct.push(product));
+    }
+
+    resetDragableProduct() {
+        console.log('czyszcze dragged');
+        return Promise.resolve(authentifi).then((draggedProduct: any) => draggedProduct.length = 0);
     }
 }
 

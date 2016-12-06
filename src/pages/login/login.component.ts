@@ -26,8 +26,10 @@ export class LoginPage {
         this.badPass = false;
         this.manager.setUser(username, password).subscribe(
             (loginStat: any) => {
-                this.manager.isLogged = true;
-                this.nav.push(HomePage, { logged: true, user: this.manager.currentUser });
+                this.manager.currentUser.logged = true;
+                console.log('manager na user', this.manager.currentUser);
+                this.manager.insertDraggedProduct(this.manager.currentUser);
+                this.nav.pop(HomePage);
             },
             err => { this.erroMessage = err; console.log("loginStat2", err); this.badPass = true; },
             () => {

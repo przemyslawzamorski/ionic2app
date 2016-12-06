@@ -18,7 +18,8 @@ export class HomePage {
   constructor(public manager: Manager, private nav: NavController, public navParams: NavParams) {
     this.logged = navParams.get('logged');
     this.user = navParams.get('user');
-    console.log(this.user);
+    this.manager.getDraggedProduct().then((droppedProduct: any) => { console.log('pobrany', droppedProduct) });
+
   }
 
   goToSheltersList() {
