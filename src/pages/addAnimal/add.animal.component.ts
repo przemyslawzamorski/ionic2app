@@ -19,8 +19,11 @@ export class AddAnimalPage {
     constructor(public manager: Manager,
         private nav: NavController,
         private navParams: NavParams) {
-        this.logged = navParams.get('logged');
-        this.user = navParams.get('user');
+        this.manager.getDraggedProduct().then((droppedProduct: any) => {
+            console.log('pobrany', droppedProduct);
+            this.user = droppedProduct[0];
+            console.log('sets user', this.user);
+        });
 
 
         this.manager.getShelterList().subscribe(

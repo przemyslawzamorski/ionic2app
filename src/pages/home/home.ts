@@ -17,9 +17,6 @@ export class HomePage implements DoCheck {
   public checkAuths: boolean = true;
 
   constructor(public manager: Manager, private nav: NavController, public navParams: NavParams) {
-
-    this.checkAuths = navParams.get('checkAuths');
-
     this.manager.getDraggedProduct().then((droppedProduct: any) => {
       console.log('pobrany', droppedProduct);
       this.user = droppedProduct[0];
