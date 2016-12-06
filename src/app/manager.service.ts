@@ -24,7 +24,6 @@ export class Manager {
     }
 
     public setUser(login: string, pass: string) {
-        this.currentUser = undefined;
         this.currentUser = new User(login, pass);
         var Myheaders: Headers;
         Myheaders = new Headers();

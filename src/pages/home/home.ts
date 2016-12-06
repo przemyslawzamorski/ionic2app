@@ -13,9 +13,9 @@ import {AddAnimalPage} from '../addAnimal/add.animal.component';
 export class HomePage {
   public user;
   public tekst: string;
-  private logged: boolean = false;
+  public logged: boolean = false;
 
-  constructor(private manager: Manager, private nav: NavController, private navParams: NavParams) {
+  constructor(public manager: Manager, private nav: NavController, public navParams: NavParams) {
     this.logged = navParams.get('logged');
     this.user = navParams.get('user');
     console.log(this.user);
@@ -42,6 +42,6 @@ export class HomePage {
     this.nav.push(HomePage);
   }
 
-  
+
 
 }

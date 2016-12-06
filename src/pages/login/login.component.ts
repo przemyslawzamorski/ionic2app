@@ -16,7 +16,7 @@ export class LoginPage {
     public serverShort: string = "https://adoptuj-pupila.herokuapp.com";
     public badPass: boolean = false;
 
-    constructor(private manager: Manager,
+    constructor(public manager: Manager,
         private nav: NavController,
         private navParams: NavParams) {
     }

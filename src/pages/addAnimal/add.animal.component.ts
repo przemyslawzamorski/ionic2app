@@ -16,7 +16,7 @@ export class AddAnimalPage {
     public erroMessage: string;
     public serverShort: string = "https://adoptuj-pupila.herokuapp.com"
 
-    constructor(private manager: Manager,
+    constructor(public manager: Manager,
         private nav: NavController,
         private navParams: NavParams) {
         this.logged = navParams.get('logged');

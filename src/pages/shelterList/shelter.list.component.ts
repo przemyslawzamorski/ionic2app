@@ -14,7 +14,7 @@ export class ShelterListPage {
     public serverShort: string = "https://adoptuj-pupila.herokuapp.com"
     public erroMessage: string;
 
-    constructor(private manager: Manager,
+    constructor(public manager: Manager,
         private nav: NavController,
         private navParams: NavParams) {
 
