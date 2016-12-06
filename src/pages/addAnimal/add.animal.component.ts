@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {Manager} from '../../app/manager.service';
-import {AnimalDetailPage} from '../animalDetail/animal.detail.component';
-
 
 @Component({
     templateUrl: 'addAnimal.html',
@@ -12,7 +10,7 @@ export class AddAnimalPage {
     private logged: boolean = false;
     public user;
     public shelterList: any[];
-
+    public error: boolean = false;
     public shelterBasicInfo: any;
     public shelterAnimals: any[];
     public erroMessage: string;
@@ -35,7 +33,13 @@ export class AddAnimalPage {
         );
     }
 
-    goToAnimalDetail(animal) {
-        this.nav.push(AnimalDetailPage, { animal: animal });
+    addPet(name: any, age: any, type: any, gender: any, shelter: any, description: any) {
+        console.log(name, age, type, gender, shelter, description)
+
+        if (!shelter || !age || !name) {
+            this.error = true;
+        } else {
+
+        }
     }
 }

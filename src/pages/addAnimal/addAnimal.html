@@ -14,7 +14,7 @@
     <ion-list>
         <ion-item>
             <ion-label color="primary">Imię</ion-label>
-            <ion-input #user placeholder="Imię"></ion-input>
+            <ion-input #name placeholder="Imię"></ion-input>
         </ion-item>
     </ion-list>
     <hr class="hr-dispel">
@@ -22,7 +22,7 @@
     <ion-list>
         <ion-item>
             <ion-label color="primary">Wiek</ion-label>
-            <ion-input type="number" #pass placeholder="Wiek"></ion-input>
+            <ion-input type="number" #age placeholder="Wiek"></ion-input>
         </ion-item>
     </ion-list>
     <hr class="hr-dispel">
@@ -30,7 +30,7 @@
     <ion-list>
         <ion-item>
             <ion-label>Typ</ion-label>
-            <ion-select>
+            <ion-select #type>
                 <ion-option value="DOG">Pies</ion-option>
                 <ion-option value="CAT">Kot</ion-option>
             </ion-select>
@@ -41,7 +41,10 @@
     <ion-list>
         <ion-item>
             <ion-label color="primary">Płeć</ion-label>
-            <ion-input type="number" #pass placeholder="Wiek"></ion-input>
+            <ion-select #gender>
+                <ion-option value="M">Męska</ion-option>
+                <ion-option value="F">żeńska</ion-option>
+            </ion-select>
         </ion-item>
     </ion-list>
     <hr class="hr-dispel">
@@ -49,7 +52,9 @@
     <ion-list>
         <ion-item>
             <ion-label color="primary">Schronisko</ion-label>
-            <ion-input type="number" #pass placeholder="Wiek"></ion-input>
+            <ion-select #shelter>
+                <ion-option *ngFor="let shelter of shelterList" value="shelter.id">{{shelter.name}}</ion-option>
+            </ion-select>
         </ion-item>
     </ion-list>
     <hr class="hr-dispel">
@@ -57,14 +62,14 @@
     <ion-list>
         <ion-item>
             <ion-label color="primary">Opis</ion-label>
-            <ion-input type="number" #pass placeholder="Wiek"></ion-input>
+            <ion-input #description type="text" #pass placeholder="Opis"></ion-input>
         </ion-item>
     </ion-list>
     <hr class="hr-dispel">
 
 
     <br>
-    <div class='div-button' (click)="logIn(user.value,pass.value)">
+    <div class='div-button' (click)="addPet(name.value,age.value,type.text,gender.text,shelter.text,description.value)">
         Dodaj zwięrzę
         <ion-icon name="paw" class="home-home-icon"></ion-icon>
     </div>
