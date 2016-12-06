@@ -14,8 +14,11 @@ export class HomePage {
   public username;
   public log: boolean = false;
   public tekst: string;
+  private logged: boolean = false;
 
   constructor(private manager: Manager, private nav: NavController) {
+    console.log('status', this.manager.currentUser);
+    this.logged = this.manager.isLogged;
   }
 
   goToSheltersList() {

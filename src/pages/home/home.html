@@ -33,7 +33,7 @@
     </div>
 
     <div *ngIf="manager.isLogged" class='div-button' (click)="Logout()">
-        Wyloguj Się
+        Wyloguj Się {{manager.currentUser.login}}
         <ion-icon name="paw" class="home-home-icon"></ion-icon>
     </div>
 </ion-content>

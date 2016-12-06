@@ -8,7 +8,7 @@ export class Manager {
     }
 
     public serverAdress: string = 'https://adoptuj-pupila.herokuapp.com/pl/api/v1/';
-    public isLogged: boolean = false;
+    public isLogged: boolean;
     public currentUser: User;
 
     getShelterList() {
@@ -23,17 +23,12 @@ export class Manager {
         return this.http.get(this.serverAdress + 'shelters/' + shelterId + '/animals/?format=json');
     }
 
-    setUser(login: string, pass: string) {
+    public setUser(login: string, pass: string) {
+        this.currentUser = undefined;
         this.currentUser = new User(login, pass);
-        // let headers = new Headers({ 'Content-Type': 'application/json' });
-        // var authheader = 'Basic ' + btoa('jacob:njjwpjkm');
-        // headers.delete('Authorization');
-        // headers.append('Authorization', authheader);
         var Myheaders: Headers;
         Myheaders = new Headers();
         this.currentUser.setHttpHeader(Myheaders);
-
-
         return this.http.get(this.serverAdress + 'auth/test/?format=json', { headers: Myheaders });
     }
 

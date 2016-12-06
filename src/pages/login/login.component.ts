@@ -19,22 +19,21 @@ export class LoginPage {
     constructor(private manager: Manager,
         private nav: NavController,
         private navParams: NavParams) {
-
     }
 
     logIn(username: string, password: string) {
+        console.log(username, password);
         this.badPass = false;
         this.manager.setUser(username, password).subscribe(
             (loginStat: any) => {
-                console.log('data', loginStat.json());
-
+                this.manager.isLogged = true;
+                console.log(this.manager.isLogged);
+                // this.nav.push(HomePage);
             },
             err => { this.erroMessage = err; console.log("loginStat2", err); this.badPass = true; },
-            () => console.log('Login for shelter completed')
+            () => {
+                console.log('Login for shelter completed'); this.nav.push(HomePage);
+            }
         );
-    }
-
-    goToAnimalDetail(animal) {
-        this.nav.push(HomePage);
     }
 }
