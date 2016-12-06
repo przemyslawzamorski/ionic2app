@@ -27,12 +27,11 @@ export class LoginPage {
         this.manager.setUser(username, password).subscribe(
             (loginStat: any) => {
                 this.manager.isLogged = true;
-                console.log(this.manager.isLogged);
-                // this.nav.push(HomePage);
+                this.nav.push(HomePage, { logged: true, user: this.manager.currentUser });
             },
             err => { this.erroMessage = err; console.log("loginStat2", err); this.badPass = true; },
             () => {
-                console.log('Login for shelter completed'); this.nav.push(HomePage);
+                console.log('Login for shelter completed');
             }
         );
     }

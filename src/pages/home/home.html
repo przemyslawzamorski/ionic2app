@@ -22,18 +22,18 @@
         <ion-icon name="paw" class="home-home-icon"></ion-icon>
     </div>
 
-    <div *ngIf="manager.isLogged" class='div-button' (click)="Logout()">
+    <div *ngIf="logged" class='div-button' (click)="Logout()">
         Dodaj zwierzaka
         <ion-icon name="paw" class="home-home-icon"></ion-icon>
     </div>
 
-    <div *ngIf="!manager.isLogged" class='div-button' (click)="goToLoginPage()">
+    <div *ngIf="!logged" class='div-button' (click)="goToLoginPage()">
         Zaloguj Się
         <ion-icon name="paw" class="home-home-icon"></ion-icon>
     </div>
 
-    <div *ngIf="manager.isLogged" class='div-button' (click)="Logout()">
-        Wyloguj Się {{manager.currentUser.login}}
+    <div *ngIf="logged" class='div-button' (click)="Logout()">
+        Wyloguj Się {{user.login}}
         <ion-icon name="paw" class="home-home-icon"></ion-icon>
     </div>
 </ion-content>

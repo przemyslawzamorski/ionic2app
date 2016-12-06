@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {Manager} from '../../app/manager.service';
-import {NavController} from 'ionic-angular';
+import {NavController, NavParams} from 'ionic-angular';
 import {ShelterListPage} from '../shelterList/shelter.list.component';
 import {AnimalListPage} from '../animalList/animal.list.component';
 import {LoginPage} from '../login/login.component';
@@ -10,15 +10,14 @@ import {LoginPage} from '../login/login.component';
   providers: [Manager]
 })
 export class HomePage {
-  public foundRepos;
-  public username;
-  public log: boolean = false;
+  public user;
   public tekst: string;
   private logged: boolean = false;
 
-  constructor(private manager: Manager, private nav: NavController) {
-    console.log('status', this.manager.currentUser);
-    this.logged = this.manager.isLogged;
+  constructor(private manager: Manager, private nav: NavController, private navParams: NavParams) {
+    this.logged = navParams.get('logged');
+    this.user = navParams.get('user');
+    console.log(this.user);
   }
 
   goToSheltersList() {
