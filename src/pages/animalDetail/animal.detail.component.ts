@@ -15,6 +15,8 @@ export class AnimalDetailPage {
     public user;
     public logged: boolean = false;
     public question: string = 'Tresc zapytania';
+    public pass: boolean = false;
+    public fail: boolean = false;
 
 
     constructor(public manager: Manager,
@@ -38,6 +40,14 @@ export class AnimalDetailPage {
     sendQuestion() {
         console.log(this.question, this.animal.id);
 
-        // this.manager.sendQuest().
+        this.manager.sendQuest(this.user, this.question, this.animal.id).subscribe(
+            (stat: any) => {
+                console.log('status', stat);
+                this.pass = true;
+
+            },
+            err => { this.fail = false; console.error(err) },
+            () => console.log('send completed')
+        );
     }
 }

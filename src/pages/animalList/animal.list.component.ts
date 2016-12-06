@@ -27,7 +27,7 @@ export class AnimalListPage {
                 this.logged = this.user.logged;
                 console.log('set', this.user);
 
-                this.manager.getAnimalsList(this.user.login, this.user.pass).subscribe(
+                this.manager.getAnimalsList(this.user.login, this.user.pass, this.user.logged, this.user.id, this.user.isStuff).subscribe(
                     (animals: any) => {
                         console.log('data', animals.json());
                         this.animalList = animals.json();

@@ -61,8 +61,10 @@
                     <ion-card-content>
                         <p class='card-text-content'>
                             <ion-icon name="calendar"> Wiek </ion-icon> {{ animal.age }}</p>
-                        <p class='card-text-content'>
-                            <ion-icon name="paw"> Typ </ion-icon> {{animal.type}}</p>
+                        <p *ngIf="animal.type === 'DOG'" class='card-text-content'>
+                            <ion-icon name="paw"> </ion-icon> Pies</p>
+                        <p *ngIf="animal.type === 'CAT'" class='card-text-content'>
+                            <ion-icon name="paw"> </ion-icon> Kot</p>
                     </ion-card-content>
                 </ion-col>
             </ion-row>

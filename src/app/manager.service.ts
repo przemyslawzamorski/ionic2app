@@ -17,8 +17,8 @@ export class Manager {
         return this.http.get(this.serverAdress + 'shelters/?format=json');
     }
 
-    getAnimalsList(login: string, pass: string) {
-        this.currentUser = new User(login, pass, false);
+    getAnimalsList(login: string, pass: string, logged: boolean, id: number, isStuff: boolean) {
+        this.currentUser = new User(login, pass, logged, id, isStuff);
         var Myheaders: Headers;
         Myheaders = new Headers();
         this.currentUser.setHttpHeader(Myheaders);
@@ -29,12 +29,20 @@ export class Manager {
         return this.http.get(this.serverAdress + 'shelters/' + shelterId + '/animals/?format=json');
     }
 
-    public setUser(login: string, pass: string) {
-        this.currentUser = new User(login, pass, false);
+    public setUser(login: string, pass: string, logged: boolean, id: number, isStuff: boolean) {
+        this.currentUser = new User(login, pass, logged, id, isStuff);
         var Myheaders: Headers;
         Myheaders = new Headers();
         this.currentUser.setHttpHeader(Myheaders);
         return this.http.get(this.serverAdress + 'auth/test/?format=json', { headers: Myheaders });
+    }
+
+    public getUserData(login: string, pass: string, logged: boolean, id: number, isStuff: boolean) {
+        this.currentUser = new User(login, pass, logged, id, isStuff);
+        var Myheaders: Headers;
+        Myheaders = new Headers();
+        this.currentUser.setHttpHeader(Myheaders);
+        return this.http.get(this.serverAdress + 'auth/getuser/?format=json', { headers: Myheaders });
     }
 
     dodajPupila(user: any, name: any, age: any, shelter: any, type: any, description: any, gender: any) {
@@ -78,9 +86,11 @@ export class Manager {
         headers.delete('Authorization');
         headers.append('Authorization', authheader);
 
+        console.log('zapytanie user', user);
+
         var jsonBody = {
-            "QUESTION": question,
-            "USER": user.pass,
+            "question": question,
+            "USER": user.id,
             "ANIMAL": animal
         };
         console.log('jsonBody', jsonBody);

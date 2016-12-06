@@ -26,8 +26,10 @@
                 <ion-card-content>
                     <p class='card-text-content'>
                         <ion-icon name="calendar"> Wiek </ion-icon> {{ animal.age }}</p>
-                    <p class='card-text-content'>
-                        <ion-icon name="paw"> Typ </ion-icon> {{animal.type}}</p>
+                    <p *ngIf="animal.type === 'DOG'" class='card-text-content'>
+                        <ion-icon name="paw"> </ion-icon> Pies</p>
+                    <p *ngIf="animal.type === 'CAT'" class='card-text-content'>
+                        <ion-icon name="paw"> </ion-icon> Kot</p>
                 </ion-card-content>
             </ion-col>
         </ion-row>
@@ -40,10 +42,18 @@
 
     <ion-item *ngIf='logged'>
         <ion-label stacked>Zapytanie adopcyjne</ion-label>
-        <ion-textarea [(ngModel)]="question" ></ion-textarea>
+        <ion-textarea [(ngModel)]="question"></ion-textarea>
     </ion-item>
 
-    <div *ngIf="logged" class='div-button' (click)="sendQuestion()" >
+    <div *ngIf="pass" class='div-button' style="background-color:green">
+        Wysłano
+    </div>
+
+    <div *ngIf="fail" class='div-button' style="background-color:red">
+        Nie można wysłać spróbuj ponownie później
+    </div>
+
+    <div *ngIf="logged" class='div-button' (click)="sendQuestion()">
         Wyślij zapytanie
         <ion-icon name="paw" class="home-home-icon"></ion-icon>
     </div>
