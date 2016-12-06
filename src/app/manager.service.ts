@@ -32,20 +32,22 @@ export class Manager {
         return this.http.get(this.serverAdress + 'auth/test/?format=json', { headers: Myheaders });
     }
 
-    putt() {
+    dodajPupila(user: any, name: any, age: any, shelter: any, type: any, description: any, gender: any) {
         let headers = new Headers({ 'Content-Type': 'application/json' });
-        var authheader = 'Basic ' + btoa('jacob:njjwpjkm');
+        var authheader = 'Basic ' + btoa(user.login + ':' + user.pass);
         headers.delete('Authorization');
         headers.append('Authorization', authheader);
 
         var jsonBody = {
-            "age": 12,
-            "name": 'anal',
-            "shelter": 6,
-            "slug": 'anal-kuba-cwikowski'
-            // "description": 'pierdolony describe którego nie ma w wymaganych parametrach bicz'
-
+            "age": age,
+            "name": name,
+            "shelter": parseInt(shelter),
+            "slug": name + '-' + shelter + '_1' + type,
+            "description": description,
+            "type": type,
+            "gender": gender
         };
+        console.log('jsonBody', jsonBody);
 
         let body = JSON.stringify(jsonBody);
         let options = new RequestOptions({ headers: headers });

@@ -43,7 +43,7 @@
             <ion-label color="primary">Płeć</ion-label>
             <ion-select #gender>
                 <ion-option value="M">Męska</ion-option>
-                <ion-option value="F">żeńska</ion-option>
+                <ion-option value="F">Żeńska</ion-option>
             </ion-select>
         </ion-item>
     </ion-list>
@@ -53,7 +53,7 @@
         <ion-item>
             <ion-label color="primary">Schronisko</ion-label>
             <ion-select #shelter>
-                <ion-option *ngFor="let shelter of shelterList" value="shelter.id">{{shelter.name}}</ion-option>
+                <ion-option *ngFor="let shelter of shelterList" value="{{shelter.id}}">{{shelter.name}}</ion-option>
             </ion-select>
         </ion-item>
     </ion-list>
@@ -69,7 +69,7 @@
 
 
     <br>
-    <div class='div-button' (click)="addPet(name.value,age.value,type.text,gender.text,shelter.text,description.value)">
+    <div class='div-button' (click)="addPet(name.value,age.value,type,gender,shelter,description.value)">
         Dodaj zwięrzę
         <ion-icon name="paw" class="home-home-icon"></ion-icon>
     </div>

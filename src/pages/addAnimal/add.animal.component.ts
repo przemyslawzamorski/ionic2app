@@ -34,11 +34,19 @@ export class AddAnimalPage {
     }
 
     addPet(name: any, age: any, type: any, gender: any, shelter: any, description: any) {
-        console.log(name, age, type, gender, shelter, description)
+        console.log(name, age, type._values[0], gender, shelter, description)
 
         if (!shelter || !age || !name) {
             this.error = true;
         } else {
+
+            this.manager.dodajPupila(this.user, name, age, shelter._values[0], type._values[0], description, gender._values[0]).subscribe(
+                data => {
+                    console.log('dodałem', data);
+                },
+                err => console.log('error dodawania', err),
+                () => console.log('getRepos completed')
+            );
 
         }
     }
