@@ -19,6 +19,7 @@ export class LoginPage {
     constructor(public manager: Manager,
         private nav: NavController,
         private navParams: NavParams) {
+
     }
 
     logIn(username: string, password: string) {
