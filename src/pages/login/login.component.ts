@@ -13,7 +13,8 @@ export class LoginPage {
     public shelterBasicInfo: any;
     public shelterAnimals: any[];
     public erroMessage: string;
-    public serverShort: string = "https://adoptuj-pupila.herokuapp.com"
+    public serverShort: string = "https://adoptuj-pupila.herokuapp.com";
+    public badPass: boolean = false;
 
     constructor(private manager: Manager,
         private nav: NavController,
@@ -22,12 +23,13 @@ export class LoginPage {
     }
 
     logIn(username: string, password: string) {
+        this.badPass = false;
         this.manager.setUser(username, password).subscribe(
             (loginStat: any) => {
                 console.log('data', loginStat.json());
 
             },
-            err => { this.erroMessage = err; console.log("loginStat2", err) },
+            err => { this.erroMessage = err; console.log("loginStat2", err); this.badPass = true; },
             () => console.log('Login for shelter completed')
         );
     }

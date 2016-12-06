@@ -25,9 +25,16 @@ export class Manager {
 
     setUser(login: string, pass: string) {
         this.currentUser = new User(login, pass);
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        this.currentUser.setHttpHeader(headers);
-        return this.http.get(this.serverAdress + 'auth/test', { headers: headers });
+        // let headers = new Headers({ 'Content-Type': 'application/json' });
+        // var authheader = 'Basic ' + btoa('jacob:njjwpjkm');
+        // headers.delete('Authorization');
+        // headers.append('Authorization', authheader);
+        var Myheaders: Headers;
+        Myheaders = new Headers();
+        this.currentUser.setHttpHeader(Myheaders);
+
+
+        return this.http.get(this.serverAdress + 'auth/test/?format=json', { headers: Myheaders });
     }
 
     putt() {
