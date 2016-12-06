@@ -17,8 +17,12 @@ export class Manager {
         return this.http.get(this.serverAdress + 'shelters/?format=json');
     }
 
-    getAnimalsList() {
-        return this.http.get(this.serverAdress + 'animals/?format=json');
+    getAnimalsList(login: string, pass: string) {
+        this.currentUser = new User(login, pass, false);
+        var Myheaders: Headers;
+        Myheaders = new Headers();
+        this.currentUser.setHttpHeader(Myheaders);
+        return this.http.get(this.serverAdress + 'animals/?format=json', { headers: Myheaders });
     }
 
     getAnimalsForShelter(shelterId: number) {

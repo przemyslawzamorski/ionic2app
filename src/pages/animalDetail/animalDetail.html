@@ -36,4 +36,7 @@
     <div class="description-text" [innerHTML]="animal.description"></div>
     <hr class="hr-dispel">
     <br>
+    <div *ngIf='logged' class="description-text" >zapytanie</div>
+    <div *ngIf='!logged' class="description-text" >Zaloguj się aby zadać zapytanie.</div>
+
 </ion-content>

@@ -11,7 +11,9 @@ export class AnimalDetailPage {
 
     public animal: any;
     public erroMessage: string;
-    public serverShort: string = "https://adoptuj-pupila.herokuapp.com"
+    public serverShort: string = "https://adoptuj-pupila.herokuapp.com";
+    public user;
+    public logged: boolean = false;
 
 
     constructor(public manager: Manager,
@@ -19,5 +21,15 @@ export class AnimalDetailPage {
         private navParams: NavParams) {
 
         this.animal = navParams.get('animal');
+
+        this.manager.getDraggedProduct().then((droppedProduct: any) => {
+            console.log('pobrany', droppedProduct);
+            this.user = droppedProduct[0];
+            console.log('sets user', this.user);
+            if (this.user) {
+                this.logged = this.user.logged;
+                console.log('set', this.logged);
+            }
+        });
     }
 }

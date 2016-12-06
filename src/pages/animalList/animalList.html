@@ -7,7 +7,7 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content *ngIf="!manager.isLogged">
+<ion-content *ngIf="!logged">
     <div padding>
         <p class="main-header-text"><strong>Lista zwierząt z Trójmiejskich schronisk</strong></p>
     </div>
@@ -18,7 +18,7 @@
 
 </ion-content>
 
-<ion-content *ngIf="manager.isLogged">
+<ion-content *ngIf="logged">
     <div padding>
         <p class="main-header-text"><strong>Lista zwierząt z Trójmiejskich schronisk</strong></p>
     </div>

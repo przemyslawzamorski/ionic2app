@@ -12,21 +12,31 @@ export class AnimalListPage {
     public animalList: any[];
     public serverShort: string = "https://adoptuj-pupila.herokuapp.com"
     public erroMessage: string;
+    public user;
+    public logged: boolean = false;
 
     constructor(public manager: Manager,
         private nav: NavController,
         private navParams: NavParams) {
 
-        if (this.manager.isLogged) {
-            this.manager.getAnimalsList().subscribe(
-                (animals: any) => {
-                    console.log('data', animals.json());
-                    this.animalList = animals.json();
-                },
-                err => { this.erroMessage = err; console.error(err) },
-                () => console.log('getRepos completed')
-            );
-        }
+        this.manager.getDraggedProduct().then((droppedProduct: any) => {
+            console.log('pobrany', droppedProduct);
+            this.user = droppedProduct[0];
+            console.log('sets user', this.user);
+            if (this.user) {
+                this.logged = this.user.logged;
+                console.log('set', this.user);
+
+                this.manager.getAnimalsList(this.user.login, this.user.pass).subscribe(
+                    (animals: any) => {
+                        console.log('data', animals.json());
+                        this.animalList = animals.json();
+                    },
+                    err => { this.erroMessage = err; console.error(err) },
+                    () => console.log('getRepos completed')
+                );
+            }
+        });
     }
 
     goToAnimalDetail(animal) {
