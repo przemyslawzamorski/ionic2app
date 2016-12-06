@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {Manager} from '../../app/manager.service';
-import {ShelterDetailPage} from '../shelterDetails/shelter.detail.component';
 import {AnimalDetailPage} from '../animalDetail/animal.detail.component';
 
 @Component({

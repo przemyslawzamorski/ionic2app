@@ -17,8 +17,23 @@
         <ion-icon name="home" class="home-home-icon"></ion-icon>
     </div>
 
-     <div class='div-button' (click)="goToAnimalsList()">
-        Sprawdź listę zwierząt<br> szukających nowego domu <ion-icon name="paw" class="home-home-icon"></ion-icon>
-     </div>
-     <!--<button (click)='addTest()'>dodaj</button>-->
+    <div class='div-button' (click)="goToAnimalsList()">
+        Sprawdź listę zwierząt<br> szukających nowego domu
+        <ion-icon name="paw" class="home-home-icon"></ion-icon>
+    </div>
+
+    <div *ngIf="manager.isLogged" class='div-button' (click)="Logout()">
+        Dodaj zwierzaka
+        <ion-icon name="paw" class="home-home-icon"></ion-icon>
+    </div>
+
+    <div *ngIf="manager.isLogged" class='div-button' (click)="goToLoginPage()">
+        Zaloguj Się
+        <ion-icon name="paw" class="home-home-icon"></ion-icon>
+    </div>
+
+    <div *ngIf="!manager.isLogged" class='div-button' (click)="Logout()">
+        Zaloguj Się
+        <ion-icon name="paw" class="home-home-icon"></ion-icon>
+    </div>
 </ion-content>

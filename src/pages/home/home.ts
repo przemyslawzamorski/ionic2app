@@ -25,6 +25,14 @@ export class HomePage {
     this.nav.push(AnimalListPage);
   }
 
+  goToLoginPage() {
+
+  }
+
+  Logout() {
+
+  }
+
   addTest() {
     this.manager.putt().subscribe(
       data => {
