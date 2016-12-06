@@ -40,10 +40,10 @@
 
     <ion-item *ngIf='logged'>
         <ion-label stacked>Zapytanie adopcyjne</ion-label>
-        <ion-textarea #question></ion-textarea>
+        <ion-textarea [(ngModel)]="question" ></ion-textarea>
     </ion-item>
 
-    <div *ngIf="logged" class='div-button' >
+    <div *ngIf="logged" class='div-button' (click)="sendQuestion()" >
         Wyślij zapytanie
         <ion-icon name="paw" class="home-home-icon"></ion-icon>
     </div>

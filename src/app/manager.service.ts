@@ -71,6 +71,24 @@ export class Manager {
         console.log('czyszcze dragged');
         return Promise.resolve(authentifi).then((draggedProduct: any) => draggedProduct.length = 0);
     }
+
+    sendQuest(user: any, question: string, animal: number) {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        var authheader = 'Basic ' + btoa(user.login + ':' + user.pass);
+        headers.delete('Authorization');
+        headers.append('Authorization', authheader);
+
+        var jsonBody = {
+            "QUESTION": question,
+            "USER": user.pass,
+            "ANIMAL": animal
+        };
+        console.log('jsonBody', jsonBody);
+
+        let body = JSON.stringify(jsonBody);
+        let options = new RequestOptions({ headers: headers });
+        return this.http.put('https://adoptuj-pupila.herokuapp.com/pl/api/v1/questions/', body, options);
+    }
 }
 
 

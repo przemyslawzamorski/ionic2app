@@ -14,6 +14,7 @@ export class AnimalDetailPage {
     public serverShort: string = "https://adoptuj-pupila.herokuapp.com";
     public user;
     public logged: boolean = false;
+    public question: string = 'Tresc zapytania';
 
 
     constructor(public manager: Manager,
@@ -31,5 +32,12 @@ export class AnimalDetailPage {
                 console.log('set', this.logged);
             }
         });
+    }
+
+
+    sendQuestion() {
+        console.log(this.question, this.animal.id);
+
+        // this.manager.sendQuest().
     }
 }
