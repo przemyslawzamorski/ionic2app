@@ -21,6 +21,17 @@ export class LoginPage {
 
     }
 
+    logIn(username: string, password: string) {
+        this.manager.setUser(username, password).subscribe(
+            (loginStat: any) => {
+                console.log('data', loginStat.json());
+
+            },
+            err => { this.erroMessage = err; console.log("loginStat2", err) },
+            () => console.log('Login for shelter completed')
+        );
+    }
+
     goToAnimalDetail(animal) {
         this.nav.push(HomePage);
     }

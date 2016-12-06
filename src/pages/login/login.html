@@ -14,7 +14,7 @@
     <ion-list>
         <ion-item>
             <ion-label color="primary">Użytkownik</ion-label>
-            <ion-input placeholder="Text Input"></ion-input>
+            <ion-input #user placeholder="Text Input"></ion-input>
         </ion-item>
     </ion-list>
     <hr class="hr-dispel">
@@ -23,10 +23,14 @@
     <ion-list>
         <ion-item>
             <ion-label color="primary">Hasło</ion-label>
-            <ion-input type="password" placeholder="Text Input"></ion-input>
+            <ion-input type="password" #pass placeholder="Text Input"></ion-input>
         </ion-item>
     </ion-list>
     <hr class="hr-dispel">
     <br>
+    <div class='div-button' (click)="logIn(user,pass)">
+        Zaloguj
+        <ion-icon name="paw" class="home-home-icon"></ion-icon>
+    </div>
 
 </ion-content>

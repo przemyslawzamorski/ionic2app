@@ -23,12 +23,11 @@ export class Manager {
         return this.http.get(this.serverAdress + 'shelters/' + shelterId + '/animals/?format=json');
     }
 
-    public setUser(login: string, pass: string) {
+    setUser(login: string, pass: string) {
         this.currentUser = new User(login, pass);
-        var Myheaders: Headers;
-        Myheaders = new Headers();
-        this.currentUser.setHttpHeader(Myheaders);
-        return this.http.get(this.serverAdress + 'auth/test', { headers: Myheaders });
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        this.currentUser.setHttpHeader(headers);
+        return this.http.get(this.serverAdress + 'auth/test', { headers: headers });
     }
 
     putt() {
