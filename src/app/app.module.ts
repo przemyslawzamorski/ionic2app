@@ -7,7 +7,7 @@ import {ShelterDetailPage} from  '../pages/shelterDetails/shelter.detail.compone
 import {AnimalDetailPage} from  '../pages/animalDetail/animal.detail.component';
 import {AnimalListPage} from  '../pages/animalList/animal.list.component';
 import {LoginPage} from '../pages/login/login.component';
-
+import {AddAnimalPage} from '../pages/addAnimal/add.animal.component';
 
 
 
@@ -19,7 +19,8 @@ import {LoginPage} from '../pages/login/login.component';
         ShelterDetailPage,
         AnimalDetailPage,
         AnimalListPage,
-        LoginPage
+        LoginPage,
+        AddAnimalPage
     ],
     imports: [
         IonicModule.forRoot(MyApp)
@@ -32,7 +33,8 @@ import {LoginPage} from '../pages/login/login.component';
         ShelterDetailPage,
         AnimalDetailPage,
         AnimalListPage,
-        LoginPage
+        LoginPage,
+        AddAnimalPage
     ],
     providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }]
 })

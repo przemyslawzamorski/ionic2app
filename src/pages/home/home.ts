@@ -4,6 +4,7 @@ import {NavController, NavParams} from 'ionic-angular';
 import {ShelterListPage} from '../shelterList/shelter.list.component';
 import {AnimalListPage} from '../animalList/animal.list.component';
 import {LoginPage} from '../login/login.component';
+import {AddAnimalPage} from '../addAnimal/add.animal.component';
 
 @Component({
   templateUrl: 'home.html',
@@ -30,6 +31,10 @@ export class HomePage {
 
   goToLoginPage() {
     this.nav.push(LoginPage);
+  }
+
+  goToaddPage() {
+    this.nav.push(AddAnimalPage, { logged: this.logged, user: this.user });
   }
 
   Logout() {

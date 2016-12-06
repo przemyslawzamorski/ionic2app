@@ -1,0 +1,76 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Adoptuj pupila
+            <ion-icon name="paw"></ion-icon>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div padding>
+        <p class="main-header-text"><strong>Dodaj zwierzę</strong></p>
+    </div>
+    <ion-list>
+        <ion-item>
+            <ion-label color="primary">Imię</ion-label>
+            <ion-input #user placeholder="Imię"></ion-input>
+        </ion-item>
+    </ion-list>
+    <hr class="hr-dispel">
+
+    <ion-list>
+        <ion-item>
+            <ion-label color="primary">Wiek</ion-label>
+            <ion-input type="number" #pass placeholder="Wiek"></ion-input>
+        </ion-item>
+    </ion-list>
+    <hr class="hr-dispel">
+
+    <ion-list>
+        <ion-item>
+            <ion-label>Typ</ion-label>
+            <ion-select>
+                <ion-option value="DOG">Pies</ion-option>
+                <ion-option value="CAT">Kot</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+    <hr class="hr-dispel">
+
+    <ion-list>
+        <ion-item>
+            <ion-label color="primary">Płeć</ion-label>
+            <ion-input type="number" #pass placeholder="Wiek"></ion-input>
+        </ion-item>
+    </ion-list>
+    <hr class="hr-dispel">
+
+    <ion-list>
+        <ion-item>
+            <ion-label color="primary">Schronisko</ion-label>
+            <ion-input type="number" #pass placeholder="Wiek"></ion-input>
+        </ion-item>
+    </ion-list>
+    <hr class="hr-dispel">
+
+    <ion-list>
+        <ion-item>
+            <ion-label color="primary">Opis</ion-label>
+            <ion-input type="number" #pass placeholder="Wiek"></ion-input>
+        </ion-item>
+    </ion-list>
+    <hr class="hr-dispel">
+
+
+    <br>
+    <div class='div-button' (click)="logIn(user.value,pass.value)">
+        Dodaj zwięrzę
+        <ion-icon name="paw" class="home-home-icon"></ion-icon>
+    </div>
+
+    <div *ngIf='error' style="background-color:red;" class='div-button'>
+        Nie wprowadzono wszystkich wymaganych danych
+    </div>
+
+</ion-content>
